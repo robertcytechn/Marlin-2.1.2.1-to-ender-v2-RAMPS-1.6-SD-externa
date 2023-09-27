@@ -143,31 +143,32 @@ static const uint8_t u8g_dev_ssd1306_128x64_adafruit3_init_seq[] PROGMEM = {
 };
 
 /* init sequence Univision datasheet (NOT TESTED) */
-static const uint8_t u8g_dev_ssd1306_128x64_univision_init_seq[] PROGMEM = {
-  U8G_ESC_CS(0),             /* disable chip */
-  U8G_ESC_ADR(0),           /* instruction mode */
-  U8G_ESC_RST(1),           /* do reset low pulse with (1*16)+2 milliseconds */
-  U8G_ESC_CS(1),             /* enable chip */
-
-  0x0ae,				/* display off, sleep mode */
-  0x0d5, 0x080,		/* clock divide ratio (0x00=1) and oscillator frequency (0x8) */
-  0x0a8, 0x03f,		/* multiplex ratio */
-  0x0d3, 0x000,		/* display offset */
-  0x040,				/* start line */
-  0x08d, 0x010,		/* charge pump setting (p62): 0x014 enable, 0x010 disable */
-  0x0a1,				/* segment remap a0/a1*/
-  0x0c8,				/* c0: scan dir normal, c8: reverse */
-  0x0da, 0x012,		/* com pin HW config, sequential com pin config (bit 4), disable left/right remap (bit 5) */
-  0x081, 0x09f,		/* set contrast control */
-  0x0d9, 0x022,		/* pre-charge period */
-  0x0db, 0x040,		/* vcomh deselect level */
-  0x022, 0x000,		/* page addressing mode WRONG: 3 byte cmd! */
-  0x0a4,				/* output ram to display */
-  0x0a6,				/* none inverted normal display mode */
-  0x0af,				/* display on */
-  U8G_ESC_CS(0),             /* disable chip */
-  U8G_ESC_END                /* end of sequence */
-};
+// robert add this
+//static const uint8_t u8g_dev_ssd1306_128x64_univision_init_seq[] PROGMEM = {
+//  U8G_ESC_CS(0),             /* disable chip */
+//  U8G_ESC_ADR(0),           /* instruction mode */
+//  U8G_ESC_RST(1),           /* do reset low pulse with (1*16)+2 milliseconds */
+//  U8G_ESC_CS(1),             /* enable chip */
+//
+//  0x0ae,				/* display off, sleep mode */
+//  0x0d5, 0x080,		/* clock divide ratio (0x00=1) and oscillator frequency (0x8) */
+//  0x0a8, 0x03f,		/* multiplex ratio */
+//  0x0d3, 0x000,		/* display offset */
+//  0x040,				/* start line */
+//  0x08d, 0x010,		/* charge pump setting (p62): 0x014 enable, 0x010 disable */
+//  0x0a1,				/* segment remap a0/a1*/
+//  0x0c8,				/* c0: scan dir normal, c8: reverse */
+//  0x0da, 0x012,		/* com pin HW config, sequential com pin config (bit 4), disable left/right remap (bit 5) */
+//  0x081, 0x09f,		/* set contrast control */
+//  0x0d9, 0x022,		/* pre-charge period */
+//  0x0db, 0x040,		/* vcomh deselect level */
+//  0x022, 0x000,		/* page addressing mode WRONG: 3 byte cmd! */
+//  0x0a4,				/* output ram to display */
+//  0x0a6,				/* none inverted normal display mode */
+//  0x0af,				/* display on */
+//  U8G_ESC_CS(0),             /* disable chip */
+//  U8G_ESC_END                /* end of sequence */
+//};
 
 /* select one init sequence here */
 //#define u8g_dev_ssd1306_128x64_init_seq u8g_dev_ssd1306_128x64_univision_init_seq
